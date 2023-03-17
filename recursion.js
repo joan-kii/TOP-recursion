@@ -17,12 +17,12 @@ function fibs(num) {
   
   // console.log(fibs(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
   
-  // Fiboancci recursion
+  // Fibonacci recursion
   function fibsRec(num) {
-    return num < 2 ? num : [].shift(fibsRec(num - 1) + fibsRec(num - 2));
+    return num === 1 ? [0, 1] : num === 0 ? [0] : [...fibsRec(num - 1), fibsRec(num - 1)[num - 1] + fibsRec(num - 1)[num - 2]];
   }
   
-  // console.log(fibs(4)); // [0, 1, 1, 2]
+  // console.log(fibsRec(10)); // [0, 1,  1,  2,  3, 5, 8, 13, 21, 34, 55]
   
   // Merge Sort Algorithm
   function mergeSort(arr) {
